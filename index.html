@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toyotaLayout</title><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="./reset.css"> -->
+    
+    <style>
+        *{
+            /* border: 1px solid; */
+            box-sizing: border-box;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        h1, h2, h3, h4{
+            font-size: 16px;
+        }
+        h1, h2, h3, h4, p, div, ul{
+            margin: 0;
+        }
+        .whirling{
+            display: inline-block;
+            transform: rotate(90deg);
+        }
+
+        .pleasure{
+            margin-top: 300px;
+        }
+        .pleasure > .wrap{
+            position: relative;
+            width: 960px;
+            margin: auto;
+            /* justify-content: center; */
+        }
+        .pleasure .header{
+            position: absolute;
+            top: -75px;
+            width: 355px;
+            border: 1px solid;
+            z-index: 1;
+            background-color: aliceblue;
+        }
+        .pleasure .header h1{
+            margin: 0;
+            padding-left: 20px;
+            font-size: 50px;
+            color: #eee;
+            background-color: #BB0404;
+        }
+        .pleasure .header div{
+            padding: 20px;
+            background-color: black;
+        }
+        .pleasure .header h2{
+            margin-bottom: 15px;
+            font-size: 25px;
+            color: #eee;
+        }
+        .pleasure .header p{
+            font-size: 20px;
+            color: #eee;
+        }
+        .pleasure .bg-gray{
+            position: absolute;
+            top: -75px;
+            right: 0;
+            background-color: #f5f5f5;
+            width: 439px;
+            height: 290px;
+        }
+        .pleasure .car-photo{
+            position: relative;
+            display: inline-block;
+            position: relative;
+            margin-left: 185px;
+        } 
+        .pleasure .youtube-icon{
+            position: absolute;
+            font-size: 40px;
+            color: #BB0404;
+            right: -5px;
+            top: 50%;
+        }
+        .pleasure .main{
+            position: relative;
+            top: -25px;
+            width: 682px;
+            background-color: #eee;
+        }
+        .pleasure .main h2{
+            padding: 5px 15px;
+            display: inline-block;
+            color: #BB0404;
+            font-weight: 900;
+            font-size: 20px;
+        }
+        .pleasure .main hr{
+            display: inline-block;
+            border: 1px solid #BB0404;
+            width: 430px;
+        }
+        .pleasure .main .list-big{
+            list-style: none;
+            padding: 15px;
+        }
+        .pleasure .main ul h3{
+            display: inline-block;
+            color: #eee;
+            background-color: black;
+            padding: 5px;
+        }
+        .pleasure .main ul p{
+            padding: 5px;
+        }
+
+        .safe{
+            margin-top: 300px;
+        }
+        .safe > .wrap{
+            position: relative;
+            width: 960px;
+            margin: auto;
+            /* justify-content: center; */
+        }
+        .safe .header{
+            position: absolute;
+            top: -75px;
+            right: 0;
+            width: 355px;
+            border: 1px solid;
+            z-index: 1;
+            background-color: aliceblue;
+        }
+        .safe .header h1{
+            margin: 0;
+            padding-left: 20px;
+            font-size: 50px;
+            color: #eee;
+            background-color: #BB0404;
+        }
+        .safe .header div{
+            padding: 20px;
+            background-color: black;
+        }
+        .safe .header h2{
+            margin-bottom: 15px;
+            font-size: 25px;
+            color: #eee;
+        }
+        .safe .header p{
+            font-size: 20px;
+            color: #eee;
+        }
+        .safe .bg-gray{
+            position: absolute;
+            top: -75px;
+            right: 164px;
+            width: 518px;
+            height: 413px;
+            background-color: #f5f5f5;
+        }
+        .safe .car-photo{
+            position: relative;
+            display: inline-block;
+            position: relative;
+        } 
+        .safe .youtube-icon{
+            position: absolute;
+            font-size: 40px;
+            color: #BB0404;
+            left: -5px;
+            top: 50%;
+            z-index: 1;
+        }
+        .safe .main{
+            position: relative;
+            top: -25px;
+            width: 682px;
+            margin-left: 279px;
+            background-color: #eee;
+        }
+        .safe .main h2{
+            padding: 5px 15px;
+            display: inline-block;
+            color: #BB0404;
+            font-weight: 900;
+            font-size: 20px;
+        }
+        .safe .main hr{
+            display: inline-block;
+            border: 1px solid #BB0404;
+            width: 430px;
+        }
+        .safe .main .list-big{
+            list-style: none;
+            padding: 15px;
+        }
+        .safe .main ul h3{
+            display: inline-block;
+            color: #eee;
+            background-color: black;
+            padding: 5px;
+        }
+        .safe .main ul p{
+            padding: 5px;
+        }
+        .try1{
+            display: inline;
+            border: 1px solid;
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <section class="pleasure">
+        <div class="wrap">
+            <div class="header">
+                <h1 class="title"><span class="whirling">01</span>操控樂趣</h1>
+                <div>
+                    <h2>人人滿意的駕駛</h2>
+                    <p>綜合氣息，關鍵字進去青年語文福建素質大學生辦理美容也在，通用詳細訊息缺乏，回覆無聊告知推坑王，曾經指南海外另一個障礙調整實際感覺衝突屬於，醫院漸漸動漫防止歡迎光臨播放</p>
+                </div>
+            </div>
+            <div class="bg-gray"></div>
+            <a href="#" class="car-photo">
+                <img src="https://picsum.photos/695/430/?random=10">
+                <i class="fa-brands fa-youtube youtube-icon"></i>
+            </a>
+            <div class="main">
+                <div>
+                    <h2>因為我們做了這些革新</h2>
+                    <hr>
+                </div>
+                <ul class="list-big">
+                    <li>
+                        <h3>低重心設計</h3>
+                        <ul><li><p>透過低重心設計，布景呈現更低伏的外觀，透過低重心設計</p></li></ul>
+                    </li>
+                    <li>
+                        <h3>低重心設計</h3>
+                        <ul><li><p>透過低重心設計，布景呈現更低伏的外觀，透過低重心設計</p></li></ul>
+                    </li>
+                    <li>
+                        <h3>低重心設計</h3>
+                        <ul><li><p>透過低重心設計，布景呈現更低伏的外觀，透過低重心設計</p></li></ul>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    </section>
+
+    <section class="safe">
+        <div class="wrap">
+            <div class="header">
+                <h1 class="title"><span class="whirling">02</span>操控安全</h1>
+                <div>
+                    <h2>人人滿意的駕駛</h2>
+                    <p>綜合氣息，關鍵字進去青年語文福建素質大學生辦理美容也在，通用詳細訊息缺乏，回覆無聊告知推坑王，曾經指南海外另一個障礙調整實際感覺衝突屬於，醫院漸漸動漫防止歡迎光臨播放</p>
+                </div>
+            </div>
+            <div class="bg-gray"></div>
+            <a href="#" class="car-photo">
+                <img src="https://picsum.photos/695/430/?random=10">
+                <i class="fa-brands fa-youtube youtube-icon"></i>
+            </a>
+            <div class="main">
+                <div>
+                    <h2>因為我們做了這些革新</h2>
+                    <hr>
+                </div>
+                <ul class="list-big">
+                    <li>
+                        <h3>低重心設計</h3>
+                        <ul><li><p>透過低重心設計，布景呈現更低伏的外觀，透過低重心設計</p></li></ul>
+                    </li>
+                    <li>
+                        <h3>低重心設計</h3>
+                        <ul><li><p>透過低重心設計，布景呈現更低伏的外觀，透過低重心設計</p></li></ul>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    </section>
+
+    <section class="pleasure">
+        <div class="wrap">
+            <div class="header">
+                <h1 class="title"><span class="whirling">01</span>操控樂趣</h1>
+                <div>
+                    <h2>人人滿意的駕駛</h2>
+                    <p>綜合氣息，關鍵字進去青年語文福建素質大學生辦理美容也在，通用詳細訊息缺乏，回覆無聊告知推坑王，曾經指南海外另一個障礙調整實際感覺衝突屬於，醫院漸漸動漫防止歡迎光臨播放</p>
+                </div>
+            </div>
+            <div class="bg-gray"></div>
+            <a href="#" class="car-photo">
+                <img src="https://picsum.photos/695/430/?random=10">
+                <i class="fa-brands fa-youtube youtube-icon"></i>
+            </a>
+            <div class="main">
+                <div>
+                    <h2>因為我們做了這些革新</h2>
+                    <hr>
+                </div>
+                <ul class="list-big">
+                    <li>
+                        <h3>低重心設計</h3>
+                        <ul><li><p>透過低重心設計，布景呈現更低伏的外觀，透過低重心設計</p></li></ul>
+                    </li>
+                    <li>
+                        <h3>低重心設計</h3>
+                        <ul><li><p>透過低重心設計，布景呈現更低伏的外觀，透過低重心設計</p></li></ul>
+                    </li>
+                    <li>
+                        <h3>低重心設計</h3>
+                        <ul><li><p>透過低重心設計，布景呈現更低伏的外觀，透過低重心設計</p></li></ul>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    </section>
+
+    <section class="safe">
+        <div class="wrap">
+            <div class="header">
+                <h1 class="title"><span class="whirling">02</span>操控安全</h1>
+                <div>
+                    <h2>人人滿意的駕駛</h2>
+                    <p>綜合氣息，關鍵字進去青年語文福建素質大學生辦理美容也在，通用詳細訊息缺乏，回覆無聊告知推坑王，曾經指南海外另一個障礙調整實際感覺衝突屬於，醫院漸漸動漫防止歡迎光臨播放</p>
+                </div>
+            </div>
+            <div class="bg-gray"></div>
+            <a href="#" class="car-photo">
+                <img src="https://picsum.photos/695/430/?random=10">
+                <i class="fa-brands fa-youtube youtube-icon"></i>
+            </a>
+            <div class="main">
+                <div>
+                    <h2>因為我們做了這些革新</h2>
+                    <hr>
+                </div>
+                <ul class="list-big">
+                    <li>
+                        <h3>低重心設計</h3>
+                        <ul><li><p>透過低重心設計，布景呈現更低伏的外觀，透過低重心設計</p></li></ul>
+                    </li>
+                    <li>
+                        <h3>低重心設計</h3>
+                        <ul><li><p>透過低重心設計，布景呈現更低伏的外觀，透過低重心設計</p></li></ul>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    </section>
+    
+    <section class="safe">
+        <div class="wrap">
+            <div class="header">
+                <h1 class="title"><span class="whirling">02</span>操控安全</h1>
+                <div>
+                    <h2>人人滿意的駕駛</h2>
+                    <p>綜合氣息，關鍵字進去青年語文福建素質大學生辦理美容也在，通用詳細訊息缺乏，回覆無聊告知推坑王，曾經指南海外另一個障礙調整實際感覺衝突屬於，醫院漸漸動漫防止歡迎光臨播放</p>
+                </div>
+            </div>
+            <div class="bg-gray"></div>
+            <a href="#" class="car-photo">
+                <img src="https://picsum.photos/695/430/?random=10">
+                <i class="fa-brands fa-youtube youtube-icon"></i>
+            </a>
+            <div class="main">
+                <div>
+                    <h2>因為我們做了這些革新</h2>
+                    <hr>
+                </div>
+                <ul class="list-big">
+                    <li>
+                        <h3>低重心設計</h3>
+                        <ul><li><p>透過低重心設計，布景呈現更低伏的外觀，透過低重心設計</p></li></ul>
+                    </li>
+                    <li>
+                        <h3>低重心設計</h3>
+                        <ul><li><p>透過低重心設計，布景呈現更低伏的外觀，透過低重心設計</p></li></ul>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    </section>
+
+    <p class="try1">try1</p>
+</body>
+</html>
